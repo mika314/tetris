@@ -22,7 +22,7 @@ Game::~Game()
 bool Game::tick()
 {
   SDL_Event e;
-  while (SDL_PollEvent(&e))
+  if (SDL_WaitEventTimeout(&e, 250))
   {
     switch (e.type)
     {
