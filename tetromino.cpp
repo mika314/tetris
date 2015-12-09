@@ -50,7 +50,7 @@ void Tetromino::move(int dx, int dy)
 }
 void Tetromino::rotate()
 {
-  ++angle_;
+  angle_ += 3;
   angle_ %= 4;
 }
 
