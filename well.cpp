@@ -1,7 +1,7 @@
 #include "well.hpp"
 
 Well::Well():
-  data{false}
+  data{{false}}
 {
 }
 
@@ -13,7 +13,7 @@ void Well::draw(SDL_Renderer *renderer)
     {
       if (data[x][y])
       {
-        SDL_Rect rect{ x * 720 / 2 / 10, y * 720 / 2 / 10, 720 / 2 / 10, 720 / 2 / 10};
+        SDL_Rect rect{ x * 720 / 2 / 10 + 1, y * 720 / 2 / 10 + 1, 720 / 2 / 10 - 2, 720 / 2 / 10 - 2};
         SDL_RenderFillRect(renderer, &rect);
       }
       else
