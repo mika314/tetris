@@ -34,28 +34,32 @@ bool Game::tick()
           {
             Tetromino t = tetromino_;
             t.move(0, 1);
-            check(t);
+            if (!well_.isCollision(t))
+              tetromino_ = t;
           }
           break;
         case SDLK_RIGHT:
           {
             Tetromino t = tetromino_;
             t.move(1, 0);
-            check(t);
+            if (!well_.isCollision(t))
+              tetromino_ = t;
           }
           break;
         case SDLK_LEFT:
           {
             Tetromino t = tetromino_;
             t.move(-1, 0);
-            check(t);
+            if (!well_.isCollision(t))
+              tetromino_ = t;
           }
           break;
         case SDLK_UP:
           {
             Tetromino t = tetromino_;
             t.rotate();
-            check(t);
+            if (!well_.isCollision(t))
+              tetromino_ = t;
           }
           break;
         }
